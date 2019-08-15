@@ -1,3 +1,13 @@
 .player__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 100px 50px 50px;
+  width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.player__item:nth-child(odd) {
+  background-color: red;
+}
+.player__item:nth-child(even) {
+  background-color: blue;
 }

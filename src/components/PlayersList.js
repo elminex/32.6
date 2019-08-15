@@ -1,6 +1,6 @@
 import React from 'react';
 import Player from './Player';
-import './PlayerList.css';
+import './PlayersList.css';
 
 const PlayersList = ({ players, onScoreUpdate }) => (
   <ul className="player__list">
