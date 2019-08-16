@@ -3,7 +3,7 @@ import Player from './Player';
 import './PlayersList.css';
 
 const PlayersList = ({ players, onScoreUpdate, onPlayerRemove, onNameChange }) => (
-  players.length === 0 ? <h2 className="playerList__title">Add new player</h2> :
+  players.length === 0 ? <h2 className="playerList__title">No players, please add some using the input above.</h2> :
   <ul className="playerList">
     {players.map((player, i) => (
       <Player
