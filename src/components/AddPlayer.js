@@ -11,8 +11,8 @@ const AddPlayer = ({ onPlayerAdd }) => {
 
   return (
     <form className="AddPlayer" onSubmit={onSubmit}>
-      <input type="text" className="AddPlayer__input" ref={node => input = node} />
-      <input type="submit" className="AddPlayer__submit" value="Add" />
+      <input type="text" className="AddPlayer__input" ref={node => input = node} required maxLength="12"/>
+      <input type="submit" className="AddPlayer__submit" value="Add new player" />
     </form>
   )
 };

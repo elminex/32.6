@@ -5,10 +5,10 @@ import { shallow } from 'enzyme';
 it('renders without crashing', () => {
   shallow(<Player />);
 });
+
 it('renders correct name', () => {
   const playerNamePassed = 'Ania';
   const playerComponent = shallow(<Player playerName={playerNamePassed} />);
-
   const playerNameRendered = playerComponent.find('.player__name').text();
   expect(playerNameRendered).toEqual(playerNamePassed);
 });
@@ -19,20 +19,40 @@ it('renders correct score', () => {
   const playerScoreRendered = playerComponent.find('.player__score').text();
 
   expect(Number(playerScoreRendered)).toEqual(scorePassed);
-})
+});
 
-it('callbacks plus fn properly', () => {
+it('calls plus fn properly', () => {
   const mockedOnPlayerScoreChange = jest.fn();
   const playerComponent = shallow(<Player updateScore={mockedOnPlayerScoreChange} />);
   const plusButton = playerComponent.find('.player__button').first();
   plusButton.simulate('click');
-  expect(mockedOnPlayerScoreChange).toBeCalledWith(1);
+
+  expect(mockedOnPlayerScoreChange).toBeCalled();
 });
 
-it('callbacks minus fn properly', () => {
+it('calls minus fn properly', () => {
   const mockedOnPlayerScoreChange = jest.fn();
   const playerComponent = shallow(<Player updateScore={mockedOnPlayerScoreChange} />);
   const plusButton = playerComponent.find('.player__button').at(1);
   plusButton.simulate('click');
-  expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
+
+  expect(mockedOnPlayerScoreChange).toBeCalled();
+});
+
+it('calls remove user fn properly', () => {
+  const mockedRemovePlayer = jest.fn();
+  const playerComponent = shallow(<Player removePlayer={mockedRemovePlayer} />);
+  const removeButton = playerComponent.find('.player__button').at(2);
+  removeButton.simulate('click');
+
+  expect(mockedRemovePlayer).toBeCalled();
+});
+
+it('calls change name fn', () => {
+  const mockedChangeName = jest.fn();
+  const playerComponent = shallow(<Player changeName={mockedChangeName} />);
+  const changeName = playerComponent.find('.player__name');
+  changeName.simulate('click');
+
+  expect(mockedChangeName).toBeCalled();
 })

@@ -5,6 +5,7 @@ import AddPlayer from './AddPlayer';
 it('renders without crashing', () => {
   shallow(<AddPlayer />);
 });
+
 it('adds Players properly', () => {
   const mockedOnPlayerAdd = jest.fn();
   const addPlayerComponent = mount(<AddPlayer onPlayerAdd={mockedOnPlayerAdd} />);

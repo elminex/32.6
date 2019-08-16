@@ -1,0 +1,16 @@
+.ListUtilities {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ListUtilities__sorting {
+  margin-bottom: 12px;
+}
+
+.ListUtilities__sortBtn {
+  margin-right: 8px;
+  padding: 4px;
+  background-color: white;
+  cursor: pointer;
+}

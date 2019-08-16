@@ -1,13 +1,30 @@
 .player__item {
   display: grid;
-  grid-template-columns: 150px 100px 50px 50px;
-  width: 500px;
+  grid-template-columns: auto 100px 75px 75px 100px;
+  justify-items: center;
+  max-width: 600px;
+  grid-column-gap: 4px;
   margin: 0 auto;
   padding: 16px;
+  line-height: 40px;
+  color: white;
 }
-.player__item:nth-child(odd) {
-  background-color: red;
+
+.player__button {
+  height: 40px;
+  padding: 0 16px;
+  margin: 0 8px;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.player__item:nth-child(even) {
-  background-color: blue;
+
+.player__name {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: white;
+  text-shadow: 1px 1px black;
+  cursor: pointer;
 }
